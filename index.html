@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Object</title>
+</head>
+<body>
+    <h1>Работа с объектом Car</h1>
+    <div id="output"></div>
+    <script>
+        const car = {
+            brand: "Dodge",
+            model: "Chellenger",
+            year: 2023,
+            color: "Demon red",
+            engine: "6.2L Gas"
+        };
+        function display(message) {
+            const output = document.getElementById('output');
+            output.innerHTML += `<p>${message}</p>`;
+        }
+        display("Исходный объект:");
+        display(JSON.stringify(car, null, 2)); 
+
+        const serCar = JSON.stringify(car);
+        display("Сериализованный объект:");
+        display(serCar);
+
+        const desCar = JSON.parse(serCar);
+        display("Десериализованный объект:");
+        display(JSON.stringify(desCar, null, 2));
+    </script>
+</body>
+</html>
